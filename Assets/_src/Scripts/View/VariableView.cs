@@ -8,7 +8,11 @@ namespace _src.Scripts.View
         public float Value
         {
             get => value;
-            set => this.value = value;
+            set
+            {
+                this.value = float.Parse($"{value:F1}");
+                SetColor();
+            }
         }
 
         protected override void OnValidate()
@@ -18,7 +22,7 @@ namespace _src.Scripts.View
 
         protected override void SetColor()
         {
-            textView.text = $"{Value:F1} {physicsProperties.Units[Property]}";
+            textView.text = $"{Value} {physicsProperties.Units[Property]}";
             textView.color = physicsProperties.Colors[Property];
         }
     }
