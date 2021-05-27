@@ -1,29 +1,37 @@
-﻿using UnityEngine;
+﻿using System;
+using _src.Scripts.Model;
+using UnityEngine;
 
 namespace _src.Scripts.View
 {
-    public class VariableView : UnitView
+    public class VariableView : FieldView
     {
-        [SerializeField] private float value;
+        [SerializeField] private float _value;
         public float Value
         {
-            get => value;
+            get => _value;
             set
             {
-                this.value = float.Parse($"{value:F1}");
-                SetColor();
+                this._value = (float)Math.Round(value * 100f) / 100f;
+                SetColorAndUnit(_physicalQuantitiesData.PhysicalQuantityModels[Property]);
             }
         }
 
-        protected override void OnValidate()
+        public void SetupVariable(VariableView variableView)
         {
-            SetColor();
+            _value = variableView.Value;
+            Property = variableView.Property;
         }
 
-        protected override void SetColor()
+        protected override void SetColorAndUnit(PhysicalQuantityModel physicsPropertyModel)
         {
-            textView.text = $"{Value} {physicsProperties.Units[Property]}";
-            textView.color = physicsProperties.Colors[Property];
+            _textView.color = physicsPropertyModel.color;
+            _textView.text = $"{Value} {physicsPropertyModel.unit}";
+        }
+
+        public void SetRaycastTarget(bool value)
+        {
+            _imageView.raycastTarget = value;
         }
     }
 }

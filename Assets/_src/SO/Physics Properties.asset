@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4deba7bfe7024c6a97f1bfdc3df54c48, type: 3}
+  m_Name: Physics Properties
+  m_EditorClassIdentifier: 
+  physicsProperties:
+  - name: 1
+    abbreviation: d
+    unit: m
+    color: {r: 0.078431375, g: 1, b: 0, a: 1}
+  - name: 3
+    abbreviation: t
+    unit: s
+    color: {r: 1, g: 0, b: 0.8970642, a: 1}
+  - name: 2
+    abbreviation: a
+    unit: ms<sup>2</sup>
+    color: {r: 1, g: 0.5411765, b: 0, a: 1}
+  - name: 0
+    abbreviation: V
+    unit: m/s
+    color: {r: 0, g: 0.6392157, b: 1, a: 1}
+  - name: 4
+    abbreviation: m
+    unit: kg
+    color: {r: 0.019607844, g: 0, b: 1, a: 1}
+  - name: 5
+    abbreviation: F
+    unit: N
+    color: {r: 1, g: 0, b: 0, a: 1}
+  - name: 6
+    abbreviation: ' '
+    unit: ' '
+    color: {r: 0.7960785, g: 0.7960785, b: 0.7960785, a: 1}
