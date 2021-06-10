@@ -14,7 +14,7 @@ namespace _src.Scripts.Controller.Interactables
             if (TryGetComponent<Interactable>(out var interactable))
             {
                 if (interactable.dropArea.variableView == null) return;
-                velocity = interactable.dropArea.variableView.Value;
+                velocity = interactable.dropArea.variableView.Value + 0.5f;
             }
             rb.Sleep();
             rb.velocity = direction * velocity;

@@ -90,18 +90,18 @@ namespace _src.Scripts.Controller.Tools
         public override void OnEnable()
         {
             base.OnEnable();
-            _startPoint.TimerTriggerEnter += CheckTimer;
-            _endPoint.TimerTriggerEnter += CheckTimer;
+            _startPoint.StopwatchEvent += Check;
+            _endPoint.StopwatchEvent += Check;
         }
 
         public override void OnDisable()
         {
             base.OnDisable();
-            _startPoint.TimerTriggerEnter -= CheckTimer;
-            _endPoint.TimerTriggerEnter -= CheckTimer;
+            _startPoint.StopwatchEvent -= Check;
+            _endPoint.StopwatchEvent -= Check;
         }
 
-        private void CheckTimer(StopWatchPoint stopWatchPoint, Renderer newTargetRenderer)
+        private void Check(StopWatchPoint stopWatchPoint, Renderer newTargetRenderer)
         {
             if (_targetRenderer == null && stopWatchPoint == _startPoint)
             {

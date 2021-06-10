@@ -1,5 +1,4 @@
 ﻿using _src.Scripts.Controller.Task;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,28 +6,27 @@ namespace _src.Scripts.Controller.Systems
 {
     public class GameManager : MonoBehaviour
     {
-        public TaskCompleteObjective mainTask;
-        [SerializeField] private UISystem uiManager;
+        public TaskCompleteObserver mainTask;
         [SerializeField] private Window finishWindow;
 
         private void OnEnable()
         {
-            mainTask.OnCompleteEvent += TaskComplete;
+            mainTask.OnTriggered += TaskComplete;
         }
 
         private void OnDisable()
         {
-            mainTask.OnCompleteEvent -= TaskComplete;
+            mainTask.OnTriggered -= TaskComplete;
         }
 
-        private void TaskComplete(IObjective sender, object param)
+        private void TaskComplete(IObserver sender, object param)
         {
-            uiManager.OpenPopupWindow(finishWindow);
+            finishWindow.gameObject.SetActive(true);
         }
 
-        public void LoadScene(SceneAsset sceneAsset)
+        public void LoadScene(int sceneNumber)
         {
-            SceneManager.LoadScene(sceneAsset.name);
+            SceneManager.LoadScene(sceneNumber);
         }
     }
 }

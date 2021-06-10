@@ -6,48 +6,48 @@ using UnityEngine.UI;
 namespace _src.Scripts.Controller.Task
 {
     [Serializable]
-    public class Task : MonoBehaviour, IObjective
+    public class Task : MonoBehaviour, IObserver
     {
         [TextArea]
-        [SerializeField] private string description;
-        [SerializeField] private TaskStatus status;
-        [SerializeField] private Objective objective;
+        [SerializeField] private string _description;
+        [SerializeField] private TaskStatus _status;
+        [SerializeField] private Observer _observer;
         
         [SerializeField] private TextMeshProUGUI _descriptionText;
         [SerializeField] private Toggle _completeToggle;
 
-        public event IObjective.Complete OnCompleteEvent;
+        public event IObserver.Trigger OnTriggered;
         
-        public void CompleteObjective(object param = default)
+        public void NotifyObserver(object param = default)
         {
-            OnCompleteEvent?.Invoke(this);
+            OnTriggered?.Invoke(this);
         }
 
         public TaskStatus Status
         {
-            get => status;
+            get => _status;
             set
             {
-                status = value;
+                _status = value;
                 SetView(value);
             }
         }
 
-        private void OnEnable()
+        protected void OnEnable()
         {
-            objective.OnCompleteEvent += OnComplete;
-        }
-        
-        private void OnDisable()
-        {
-            objective.OnCompleteEvent -= OnComplete;
+            _observer.OnTriggered += Complete;
         }
 
-        private void OnComplete(IObjective sender, object param)
+        protected void OnDisable()
+        {
+            _observer.OnTriggered -= Complete;
+        }
+
+        private void Complete(IObserver sender, object param)
         {
             SetView(TaskStatus.COMPLETE);
-            objective.OnCompleteEvent -= OnComplete;
-            CompleteObjective(this);
+            NotifyObserver(this);
+            _observer.OnTriggered -= Complete;
         }
 
         private void OnValidate()
@@ -57,8 +57,8 @@ namespace _src.Scripts.Controller.Task
 
         private void SetView(TaskStatus newStatus)
         {
-            status = newStatus;
-            if (_descriptionText != null) _descriptionText.text = description;
+            _status = newStatus;
+            if (_descriptionText != null) _descriptionText.text = _description;
             if (_completeToggle != null) _completeToggle.isOn = Status == TaskStatus.COMPLETE;
         }
     }

@@ -6,7 +6,7 @@ EditorSettings:
   serializedVersion: 11
   m_SerializationMode: 2
   m_LineEndingsForNewScripts: 0
-  m_DefaultBehaviorMode: 0
+  m_DefaultBehaviorMode: 1
   m_PrefabRegularEnvironment: {fileID: 0}
   m_PrefabUIEnvironment: {fileID: 102900000, guid: d54d0738f99c16346b7d699b43ca71b4, type: 3}
   m_SpritePackerMode: 0

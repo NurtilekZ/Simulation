@@ -10,11 +10,13 @@ namespace _src.Scripts.View
         public float Value
         {
             get => _value;
-            set
-            {
-                this._value = (float)Math.Round(value * 100f) / 100f;
-                SetColorAndUnit(_physicalQuantitiesData.PhysicalQuantityModels[Property]);
-            }
+            set => OnValueChange(value);
+        }
+
+        private void OnValueChange(float value)
+        {
+            _value = (float)Math.Round(value * 100f) / 100f;
+            SetColor(_physicalQuantitiesData.physicalQuantityModels[Property]);
         }
 
         public void SetupVariable(VariableView variableView)
@@ -23,10 +25,15 @@ namespace _src.Scripts.View
             Property = variableView.Property;
         }
 
-        protected override void SetColorAndUnit(PhysicalQuantityModel physicsPropertyModel)
+        protected override void SetColor(PhysicalQuantityModel physicalQuantityModel)
         {
-            _textView.color = physicsPropertyModel.color;
-            _textView.text = $"{Value} {physicsPropertyModel.unit}";
+            _textView.color = physicalQuantityModel.color;
+            SetValueAndUnit(physicalQuantityModel);
+        }
+
+        private void SetValueAndUnit(PhysicalQuantityModel physicalQuantityModel)
+        {
+            _textView.text = $"{Value} {physicalQuantityModel.unit}";
         }
 
         public void SetRaycastTarget(bool value)

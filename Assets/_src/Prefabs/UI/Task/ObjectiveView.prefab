@@ -180,9 +180,9 @@ MonoBehaviour:
   m_fontSize: 16
   m_fontSizeBase: 20
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 0
-  m_fontSizeMax: 20
+  m_fontSizeMax: 16
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -460,8 +460,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ba267db0b14b44b9d043e0f997c4bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
-  status: 0
-  objective: {fileID: 0}
+  _description: 
+  _status: 0
+  _observer: {fileID: 0}
   _descriptionText: {fileID: 602273470017834121}
   _completeToggle: {fileID: 602273469356600385}

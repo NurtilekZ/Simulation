@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using _src.Scripts.Model;
 using _src.Scripts.View;
+using _src.Scripts.View.DropAndDrag;
 using org.mariuszgromada.math.mxparser;
 using TMPro;
 using UnityEngine;

@@ -75,7 +75,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294952448
-  m_fontColor: {r: 0, g: 0.77647066, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0.6392157, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 0
-  m_fontSizeMax: 25
+  m_fontSizeMax: 20
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -198,7 +198,7 @@ MonoBehaviour:
   _imageView: {fileID: 360177799322354846}
   _textView: {fileID: 2973149538433716203}
   _physicalQuantity: 0
-  _physicalQuantitiesData: {fileID: 11400000, guid: d5b71127146bc9046a4972bd28d8a5e2, type: 2}
+  _physicalQuantitiesData: {fileID: 11400000, guid: ac6a244338c241d44a689c0ddbf7f9ad, type: 2}
   _value: 0
 --- !u!114 &4667086255198620176
 MonoBehaviour:

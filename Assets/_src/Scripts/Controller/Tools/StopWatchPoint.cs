@@ -8,13 +8,14 @@ namespace _src.Scripts.Controller.Tools
         private Collider _collider;
         private Renderer _renderer;
 
-        public delegate void TimerTrigger(StopWatchPoint stopWatchPoint, Renderer newTargetRenderer);
-        public event TimerTrigger TimerTriggerEnter;
-        private void OnTimerTriggerEnter(Renderer newTargetRenderer)
+        public delegate void Stopwatch(StopWatchPoint stopWatchPoint, Renderer newTargetRenderer);
+        public event Stopwatch StopwatchEvent;
+
+        private void InvokeStopwatchEvent(Renderer newTargetRenderer)
         {
-            TimerTriggerEnter?.Invoke(this, newTargetRenderer);
+            StopwatchEvent?.Invoke(this, newTargetRenderer);
         }
-        
+
         private void Awake()
         {
             _collider = GetComponent<Collider>();
@@ -24,7 +25,7 @@ namespace _src.Scripts.Controller.Tools
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.GetComponent<Obstacle>() == null) return;
-            OnTimerTriggerEnter(other.GetComponent<Renderer>());
+            InvokeStopwatchEvent(other.GetComponent<Renderer>());
         }
 
         public void ActivatePoint(bool value)

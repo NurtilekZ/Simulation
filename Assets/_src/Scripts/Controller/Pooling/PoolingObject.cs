@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 namespace _src.Scripts.Controller.Pooling
@@ -26,18 +25,18 @@ namespace _src.Scripts.Controller.Pooling
             StartCoroutine(_disableObject);
         }
 
-        private IEnumerator DisableObject()
-        {
-            yield return new WaitForSeconds(lifetime);
-            _poolingSystem.Enqueue(this);
-            gameObject.SetActive(false);
-        }
-
         private void OnDisable()
         {
             if (_poolingSystem._poolQueue.Contains(this)) return;
             _poolingSystem.Enqueue(this);
             StopCoroutine(_disableObject);
+        }
+
+        private IEnumerator DisableObject()
+        {
+            yield return new WaitForSeconds(lifetime);
+            _poolingSystem.Enqueue(this);
+            gameObject.SetActive(false);
         }
     }
 }

@@ -11,15 +11,4 @@ namespace _src.Scripts.Model
         public string unit;
         public Color color;
     }
-    
-    public enum PhysicalQuantity
-    {
-        VELOCITY,
-        DISTANCE,
-        ACCELERATION,
-        TIME,
-        MASS,
-        FORCE,
-        NULL
-    }
 }

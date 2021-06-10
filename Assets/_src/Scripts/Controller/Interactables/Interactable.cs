@@ -1,4 +1,4 @@
-﻿using _src.Scripts.View;
+﻿using _src.Scripts.View.DropAndDrag;
 using UnityEngine;
 
 namespace _src.Scripts.Controller.Interactables
@@ -13,7 +13,7 @@ namespace _src.Scripts.Controller.Interactables
         void Start()
         {
             _initialPosition = transform.position;
-            if (dropArea == null)
+            if (dropArea != null)
             {
                 dropArea.transform.position = cameraCache.WorldToScreenPoint(transform.position + new Vector3(0,1.5f,0));
             }
@@ -29,9 +29,12 @@ namespace _src.Scripts.Controller.Interactables
 
         private void OnCollisionEnter(Collision other)
         {
-            if (!other.gameObject.GetComponent<Obstacle>()) return;
-            GetComponent<Rigidbody>().Sleep();
-            transform.position = _initialPosition;
+            if (other.gameObject.TryGetComponent<Obstacle>(out Obstacle obstacle))
+            {
+                if (obstacle.isStaticObstacle) return;
+                GetComponent<Rigidbody>().Sleep();
+                transform.position = _initialPosition;
+            }
         }
     }
 }

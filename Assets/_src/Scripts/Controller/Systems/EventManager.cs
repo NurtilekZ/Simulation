@@ -6,64 +6,42 @@ namespace _src.Scripts.Controller.Systems
 {
     public class EventManager : IService
     {
-        private Dictionary<Event_Type, List<IListener>> _gameEvents = new Dictionary<Event_Type, List<IListener>>();
+        private Dictionary<PublisherType, List<ISubscriber>> _pubSubsDictionary = new Dictionary<PublisherType, List<ISubscriber>>();
 
-        public void Raise<T>(Event_Type eventType, Component sender, T param = default)
+        public void Publish<T>(PublisherType publisherType, Component sender, T param = default)
         {
-            foreach (var listener in _gameEvents[eventType])
+            foreach (var subscriber in _pubSubsDictionary[publisherType])
             {
-                listener.OnEvent(eventType, sender, param);
+                subscriber.OnPublish(publisherType, sender, param);
             }
         }
 
-        public void RegisterListener(Event_Type eventType, IListener listener)
+        public void RegisterListener(PublisherType publisherType, ISubscriber subscriber)
         {
-            if (_gameEvents.TryGetValue(eventType, out var listeners))
+            if (_pubSubsDictionary.TryGetValue(publisherType, out var subscribers))
             {
-                if (!listeners.Contains(listener))
+                if (!subscribers.Contains(subscriber))
                 {
-                    listeners.Add(listener);
+                    subscribers.Add(subscriber);
                     return;
                 }
             }
 
-            listeners = new List<IListener>() {listener};
-            _gameEvents.Add(eventType, listeners);
+            subscribers = new List<ISubscriber>() {subscriber};
+            _pubSubsDictionary.Add(publisherType, subscribers);
         }
 
-        public void UnregisterListener(Event_Type eventType, IListener listener)
+        public void UnregisterListener(PublisherType publisherType, ISubscriber subscriber)
         {
-            if (_gameEvents.TryGetValue(eventType, out var listeners))
+            if (!_pubSubsDictionary.TryGetValue(publisherType, out var subscribers)) return;
+            if (subscribers.Contains(subscriber))
             {
-                if (listeners.Contains(listener))
-                {
-                    listeners.Remove(listener);
-                }
+                subscribers.Remove(subscriber);
             }
         }
-        
-        // private void RemoveRedundancies()
-        // {
-        //     Dictionary<Event_Type, List<IListener>> tmpListeners = new Dictionary<Event_Type, List<IListener>>();
-        //     foreach (var item in _gameEvents)
-        //     {
-        //         for (int i = item.Value.Count - 1; i >= 0; i--)
-        //         {
-        //             if (item.Value[i].Equals(null))
-        //             {
-        //                 item.Value.RemoveAt(i);
-        //             }
-        //
-        //         }
-        //
-        //         if (item.Value.Count > 0)
-        //             tmpListeners.Add(item.Key, item.Value);
-        //         _gameEvents = tmpListeners;
-        //     }
-        // }
     }
 
-    public enum Event_Type
+    public enum PublisherType
     {
         RETURN_TO_VARIABLES,
     }

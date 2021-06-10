@@ -27,7 +27,7 @@ namespace _src.Scripts.Controller.Tools
 
         public virtual void OnDisable()
         {
-            _variable.gameObject.SetActive(false);
+            _variable?.gameObject.SetActive(false);
         }
 
         protected abstract void ActivateTool(bool value);
