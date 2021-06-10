@@ -8647,3 +8647,219 @@ System memory in use after: 398.6 MB.
 Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3421.
 Total: 3.861400 ms (FindLiveObjects: 0.546100 ms CreateObjectMapping: 0.181700 ms MarkObjects: 2.654300 ms  DeleteObjects: 0.476900 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001753 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.721 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.90 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2256 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 447.5 MB.
+System memory in use after: 447.3 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3425.
+Total: 4.802300 ms (FindLiveObjects: 0.559000 ms CreateObjectMapping: 0.261100 ms MarkObjects: 3.283700 ms  DeleteObjects: 0.695200 ms)
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 2.86 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 9 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 401.2 MB.
+System memory in use after: 401.0 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3425.
+Total: 4.858600 ms (FindLiveObjects: 0.683500 ms CreateObjectMapping: 0.182100 ms MarkObjects: 3.324600 ms  DeleteObjects: 0.666800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1730.900604 seconds.
+  path: Assets/_src/Material/Transparent.mat
+  artifactKey: Guid(599ff2e266cbc2f4786745673ef63dcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_src/Material/Transparent.mat using Guid(599ff2e266cbc2f4786745673ef63dcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb52fbf97647d78013065dddce431635') in 0.068349 seconds
+  Import took 0.073325 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006676 seconds.
+  path: Assets/_src/Material/Transparent.mat
+  artifactKey: Guid(599ff2e266cbc2f4786745673ef63dcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_src/Material/Transparent.mat using Guid(599ff2e266cbc2f4786745673ef63dcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb52fbf97647d78013065dddce431635') in 0.009664 seconds
+  Import took 0.014267 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.209697 seconds.
+  path: Assets/_src/Prefabs/Tools/StopWatch_Tool.prefab
+  artifactKey: Guid(220ca6d667847a743a3619b2a4c1c57c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_src/Prefabs/Tools/StopWatch_Tool.prefab using Guid(220ca6d667847a743a3619b2a4c1c57c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af00aca2b2ecaaa84a7b15fac27f0261') in 0.010025 seconds
+  Import took 0.028158 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.232053 seconds.
+  path: Assets/_src/Prefabs/World/PoolingPosition.prefab
+  artifactKey: Guid(0836d4a87808d0e47afa20f36146ab2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_src/Prefabs/World/PoolingPosition.prefab using Guid(0836d4a87808d0e47afa20f36146ab2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2bfc9258337235530cd8be8bab3dcb9') in 0.007340 seconds
+  Import took 0.012143 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.060901 seconds.
+  path: Assets/_src/Prefabs/World/PoolingPosition.prefab
+  artifactKey: Guid(0836d4a87808d0e47afa20f36146ab2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_src/Prefabs/World/PoolingPosition.prefab using Guid(0836d4a87808d0e47afa20f36146ab2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2bfc9258337235530cd8be8bab3dcb9') in 0.003269 seconds
+  Import took 0.007413 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.316961 seconds.
+  path: Assets/_src/Prefabs/World/PoolingPosition.prefab
+  artifactKey: Guid(0836d4a87808d0e47afa20f36146ab2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_src/Prefabs/World/PoolingPosition.prefab using Guid(0836d4a87808d0e47afa20f36146ab2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e250554aae8651eb1875916ca3f6fdea') in 0.005144 seconds
+  Import took 0.010428 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.053302 seconds.
+  path: Assets/_src/Prefabs/World/PoolingPosition.prefab
+  artifactKey: Guid(0836d4a87808d0e47afa20f36146ab2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_src/Prefabs/World/PoolingPosition.prefab using Guid(0836d4a87808d0e47afa20f36146ab2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e250554aae8651eb1875916ca3f6fdea') in 0.003438 seconds
+  Import took 0.007585 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.317898 seconds.
+  path: Assets/_src/Prefabs/World/Barrel_Obstacle.prefab
+  artifactKey: Guid(055726bc9922a0b47a316c1706953464) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_src/Prefabs/World/Barrel_Obstacle.prefab using Guid(055726bc9922a0b47a316c1706953464) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7cf289974108ea01edbeea1a6ed052cf') in 0.012804 seconds
+  Import took 0.017567 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.054614 seconds.
+  path: Assets/_src/Prefabs/World/Barrel_Obstacle.prefab
+  artifactKey: Guid(055726bc9922a0b47a316c1706953464) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_src/Prefabs/World/Barrel_Obstacle.prefab using Guid(055726bc9922a0b47a316c1706953464) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7cf289974108ea01edbeea1a6ed052cf') in 0.006290 seconds
+  Import took 0.010418 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.442993 seconds.
+  path: Assets/_src/Prefabs/World/Barrel_Obstacle.prefab
+  artifactKey: Guid(055726bc9922a0b47a316c1706953464) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_src/Prefabs/World/Barrel_Obstacle.prefab using Guid(055726bc9922a0b47a316c1706953464) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce47f4cd1f63c0ac5d7c392c7448324f') in 0.007012 seconds
+  Import took 0.011329 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.432777 seconds.
+  path: Assets/_src/Prefabs/World/Barrel_Obstacle.prefab
+  artifactKey: Guid(055726bc9922a0b47a316c1706953464) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_src/Prefabs/World/Barrel_Obstacle.prefab using Guid(055726bc9922a0b47a316c1706953464) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cf8416aafd0f2efd1f4282ba60195c8') in 0.010538 seconds
+  Import took 0.024570 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.002238 seconds.
+  path: Assets/_src/Prefabs/World/Barrel_Interactive.prefab
+  artifactKey: Guid(2df827c665cff8e409e6341e6becc509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_src/Prefabs/World/Barrel_Interactive.prefab using Guid(2df827c665cff8e409e6341e6becc509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdbec1d25d10c8278b0904194578dd5a') in 0.008013 seconds
+  Import took 0.012160 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.059942 seconds.
+  path: Assets/_src/Prefabs/World/Barrel_Interactive.prefab
+  artifactKey: Guid(2df827c665cff8e409e6341e6becc509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_src/Prefabs/World/Barrel_Interactive.prefab using Guid(2df827c665cff8e409e6341e6becc509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdbec1d25d10c8278b0904194578dd5a') in 0.006481 seconds
+  Import took 0.010703 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.206984 seconds.
+  path: Assets/_src/Prefabs/World/Barrel_Interactive.prefab
+  artifactKey: Guid(2df827c665cff8e409e6341e6becc509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_src/Prefabs/World/Barrel_Interactive.prefab using Guid(2df827c665cff8e409e6341e6becc509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66f33a2e7a0e8b11f5277cab950e5365') in 0.007802 seconds
+  Import took 0.019020 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.051610 seconds.
+  path: Assets/_src/Prefabs/World/Barrel_Interactive.prefab
+  artifactKey: Guid(2df827c665cff8e409e6341e6becc509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_src/Prefabs/World/Barrel_Interactive.prefab using Guid(2df827c665cff8e409e6341e6becc509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66f33a2e7a0e8b11f5277cab950e5365') in 0.007428 seconds
+  Import took 0.011859 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.689735 seconds.
+  path: Assets/_src/Prefabs/World/Barrel_Interactive.prefab
+  artifactKey: Guid(2df827c665cff8e409e6341e6becc509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_src/Prefabs/World/Barrel_Interactive.prefab using Guid(2df827c665cff8e409e6341e6becc509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82556b4a1a4b25561928c269d1fd7def') in 0.008338 seconds
+  Import took 0.039171 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.031836 seconds.
+  path: Assets/_src/Prefabs/World/Barrel_Interactive.prefab
+  artifactKey: Guid(2df827c665cff8e409e6341e6becc509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_src/Prefabs/World/Barrel_Interactive.prefab using Guid(2df827c665cff8e409e6341e6becc509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82556b4a1a4b25561928c269d1fd7def') in 0.009295 seconds
+  Import took 0.013541 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.079175 seconds.
+  path: Assets/_src/Prefabs/World/Barrel_Interactive.prefab
+  artifactKey: Guid(2df827c665cff8e409e6341e6becc509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_src/Prefabs/World/Barrel_Interactive.prefab using Guid(2df827c665cff8e409e6341e6becc509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c3bef1a6cb2d194a2c6d78d497c62b4') in 0.007206 seconds
+  Import took 0.011434 seconds .
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 9 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 401.2 MB.
+System memory in use after: 401.1 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3427.
+Total: 3.527900 ms (FindLiveObjects: 0.344600 ms CreateObjectMapping: 0.108100 ms MarkObjects: 2.632600 ms  DeleteObjects: 0.441000 ms)
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 9 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 401.3 MB.
+System memory in use after: 401.1 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3427.
+Total: 5.829700 ms (FindLiveObjects: 0.904400 ms CreateObjectMapping: 0.305300 ms MarkObjects: 4.121500 ms  DeleteObjects: 0.496500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1011.123877 seconds.
+  path: Assets/_src/Scenes/Task_Pirates Hiding Place.unity
+  artifactKey: Guid(ef12437f56dad7f43b21d7b6f856407e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_src/Scenes/Task_Pirates Hiding Place.unity using Guid(ef12437f56dad7f43b21d7b6f856407e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '443b3b4bf70eace048f92fd07c558021') in 0.006233 seconds
+  Import took 0.030031 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
