@@ -61,6 +61,11 @@ namespace _src.Scripts.Controller.Task
             if (_descriptionText != null) _descriptionText.text = _description;
             if (_completeToggle != null) _completeToggle.isOn = Status == TaskStatus.COMPLETE;
         }
+
+        public void SetCountText(string countText)
+        {
+            _descriptionText.text = $"{_description} {countText}";
+        }
     }
     
     public enum TaskStatus

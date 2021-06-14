@@ -38,6 +38,10 @@ MonoBehaviour:
     unit: N
     color: {r: 1, g: 0, b: 0, a: 1}
   - name: 6
+    abbreviation: "\u0398"
+    unit: <sup>o</sup>
+    color: {r: 0.391634, g: 0, b: 1, a: 1}
+  - name: 7
     abbreviation: ' '
     unit: ' '
     color: {r: 0.7960785, g: 0.7960785, b: 0.7960785, a: 1}

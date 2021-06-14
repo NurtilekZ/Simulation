@@ -11,10 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_src/Scenes/Task_Pirates Hiding Place.unity
     guid: ef12437f56dad7f43b21d7b6f856407e
-  - enabled: 0
-    path: Assets/_src/Scenes/Task_Obstacles Run.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/_src/Scenes/Task_Target Shooting.unity
-    guid: 6aae977b73cd00943b3e9aa8e864c30f
+  - enabled: 1
+    path: Assets/_src/Scenes/Task_Ships Battle.unity
+    guid: d4fd06e32b645aa408f9d116d571e2d4
   m_configObjects: {}

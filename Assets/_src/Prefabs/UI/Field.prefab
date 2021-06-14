@@ -56,7 +56,7 @@ MonoBehaviour:
   _imageView: {fileID: 2523451501422892430}
   _textView: {fileID: 3103519060951058395}
   _physicalQuantity: 0
-  _physicalQuantitiesData: {fileID: 11400000, guid: ac6a244338c241d44a689c0ddbf7f9ad, type: 2}
+  _physicalQuantitiesData: {fileID: 11400000, guid: 4368f047ee0581340950a1163ddab9f5, type: 2}
 --- !u!114 &3379392679438722065
 MonoBehaviour:
   m_ObjectHideFlags: 0

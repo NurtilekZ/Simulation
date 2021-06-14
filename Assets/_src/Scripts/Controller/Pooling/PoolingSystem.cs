@@ -1,18 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using _src.Scripts.Controller.Interactables;
+using _src.Scripts.Controller.Interactable;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace _src.Scripts.Controller.Pooling
 {
+    [RequireComponent(typeof(MovementHandler))]
     public class PoolingSystem : MonoBehaviour
     {
+        [Header("Fields")]
         public float objectsLifetime;
-        [SerializeField] private float _intervalSeconds;
+        [SerializeField] private float _poolingInterval;
         [SerializeField] private int _numberOfInstances;
-        [SerializeField] private GameObject _objectPrefab;
-        [SerializeField] private bool _isStopped;
+        [SerializeField] private bool _isDisabled;
         [SerializeField] private Vector3 objectRotation;
+        [Header("References")]
+        [SerializeField] private GameObject _objectPrefab;
+        [SerializeField] private MovementHandler _movementHandler;
+
+        [SerializeField] private UnityEvent OnObjectEnabled;
 
         public Queue<PoolingObject> _poolQueue = new Queue<PoolingObject>(new List<PoolingObject>());
         private IEnumerator _pool;
@@ -22,7 +29,6 @@ namespace _src.Scripts.Controller.Pooling
             for (int i = 0; i < _numberOfInstances; i++)
             {
                 PoolingObject poolingObject = Instantiate(_objectPrefab, transform).AddComponent<PoolingObject>();
-                poolingObject.SetPoolingObject(this);
                 poolingObject.gameObject.SetActive(false);
                 _poolQueue.Enqueue(poolingObject);
             }
@@ -33,20 +39,28 @@ namespace _src.Scripts.Controller.Pooling
 
         private IEnumerator PoolObjects()
         {
-            while (!_isStopped)
+            while (!_isDisabled)
             {
                 PoolingObject poolingObject = _poolQueue.Dequeue();
                 poolingObject.transform.SetPositionAndRotation(transform.position, Quaternion.Euler(objectRotation));
-                poolingObject.lifetime = objectsLifetime;
                 poolingObject.gameObject.SetActive(true);
-                poolingObject.GetComponent<MovementComponent>().Move();
-                yield return new WaitForSeconds(_intervalSeconds);
+                poolingObject.DisableAfter(objectsLifetime);
+                if (poolingObject.TryGetComponent(out MovementComponent movementComponent))
+                {
+                    movementComponent.Setup(_movementHandler);
+                    movementComponent.Move();
+                }
+                poolingObject.OnDisableEvent += Enqueue;
+                OnObjectEnabled.Invoke();
+                yield return new WaitForSeconds(_poolingInterval);
             }
         }
 
-        public void Enqueue(PoolingObject poolingObject)
+        private void Enqueue(PoolingObject poolingObject)
         {
+            if (_poolQueue.Contains(poolingObject)) return;
             _poolQueue.Enqueue(poolingObject);
+            poolingObject.OnDisableEvent -= Enqueue;
         }
     }
 }

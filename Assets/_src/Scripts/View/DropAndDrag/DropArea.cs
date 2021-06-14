@@ -1,3 +1,4 @@
+using System;
 using _src.Scripts.Controller.Formulas;
 using _src.Scripts.Controller.Services;
 using _src.Scripts.Controller.Systems;
@@ -12,6 +13,7 @@ namespace _src.Scripts.View.DropAndDrag
         [SerializeField] private FieldView _fieldView;
         
         public VariableView variableView;
+        public event Action<VariableView> OnDropEvent;
 
         public void OnDrop(PointerEventData eventData)
         {
@@ -26,6 +28,7 @@ namespace _src.Scripts.View.DropAndDrag
                 variableView = null;
             }
             AttachVariable(droppedVariable);
+            OnDropEvent?.Invoke(droppedVariable);
         }
 
         private void AttachVariable(VariableView droppedVariable)

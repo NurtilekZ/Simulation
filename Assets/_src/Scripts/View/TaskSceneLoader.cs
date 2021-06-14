@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace _src.Scripts.Controller.Task
+namespace _src.Scripts.View
 {
     public class TaskSceneLoader : MonoBehaviour
     {

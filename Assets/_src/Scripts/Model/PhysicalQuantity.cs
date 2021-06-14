@@ -8,6 +8,7 @@
         TIME,
         MASS,
         FORCE,
+        ANGLE,
         NULL
     }
 }

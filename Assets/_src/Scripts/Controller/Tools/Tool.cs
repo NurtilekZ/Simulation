@@ -6,14 +6,12 @@ namespace _src.Scripts.Controller.Tools
 {
     public abstract class Tool : MonoBehaviour
     {
-        [Header("Common Tool Properties")]
+        [Header("General Fields")]
         [SerializeField] protected bool _isActive;
-        [Header("Individual Tool Properties")]
+        [Header("General References")]
         [SerializeField] protected PhysicalQuantity _physicalQuantity;
         [SerializeField] protected VariableView _variable;
-
-        protected abstract void Awake();
-
+        
         public void SelectTool(bool triggerValue)
         {
             gameObject.SetActive(triggerValue);
@@ -27,9 +25,9 @@ namespace _src.Scripts.Controller.Tools
 
         public virtual void OnDisable()
         {
-            _variable?.gameObject.SetActive(false);
+            _variable?.gameObject?.SetActive(false);
         }
 
-        protected abstract void ActivateTool(bool value);
+        protected abstract void ActivateUI(bool value);
     }
 }

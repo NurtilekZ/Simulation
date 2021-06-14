@@ -1,10 +1,11 @@
-using _src.Scripts.Controller.Interactables;
+using _src.Scripts.Controller.Interactable;
 using UnityEngine;
 
 namespace _src.Scripts.Controller.Tools
 {
     public class StopWatchPoint : MonoBehaviour
     {
+        [Header("References")]
         private Collider _collider;
         private Renderer _renderer;
 

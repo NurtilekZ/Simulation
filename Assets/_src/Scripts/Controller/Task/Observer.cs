@@ -7,9 +7,10 @@ namespace _src.Scripts.Controller.Task
     public abstract class Observer : MonoBehaviour, IObserver
     {
         public event IObserver.Trigger OnTriggered;
-
+        public bool isNotified;
         public virtual void NotifyObserver(object param = default)
         {
+            isNotified = true;
             OnTriggered?.Invoke(this, param);
         }
 

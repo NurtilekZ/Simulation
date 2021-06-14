@@ -198,7 +198,7 @@ MonoBehaviour:
   _imageView: {fileID: 360177799322354846}
   _textView: {fileID: 2973149538433716203}
   _physicalQuantity: 0
-  _physicalQuantitiesData: {fileID: 11400000, guid: ac6a244338c241d44a689c0ddbf7f9ad, type: 2}
+  _physicalQuantitiesData: {fileID: 11400000, guid: 4368f047ee0581340950a1163ddab9f5, type: 2}
   _value: 0
 --- !u!114 &4667086255198620176
 MonoBehaviour:

@@ -1,41 +1,29 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace _src.Scripts.Controller.Pooling
 {
     public class PoolingObject : MonoBehaviour
     {
-        [SerializeField] private PoolingSystem _poolingSystem;
-        public float lifetime;
-        
-        private IEnumerator _disableObject;
+        public event Action<PoolingObject> OnDisableEvent;
+        private IEnumerator _disable;
 
-        public void SetPoolingObject(PoolingSystem poolingSystem)
+        public void DisableAfter(float lifetime)
         {
-            _poolingSystem = poolingSystem;
-        }
-
-        private void OnEnable()
-        {
-            if (_poolingSystem != null)
-            {
-                lifetime = _poolingSystem.objectsLifetime;
-            }
-            _disableObject = DisableObject();
-            StartCoroutine(_disableObject);
+            _disable = Disable(lifetime);
+            StartCoroutine(_disable);
         }
 
         private void OnDisable()
         {
-            if (_poolingSystem._poolQueue.Contains(this)) return;
-            _poolingSystem.Enqueue(this);
-            StopCoroutine(_disableObject);
+            OnDisableEvent?.Invoke(this);
+            StopCoroutine(_disable);
         }
 
-        private IEnumerator DisableObject()
+        private IEnumerator Disable(float lifetime)
         {
             yield return new WaitForSeconds(lifetime);
-            _poolingSystem.Enqueue(this);
             gameObject.SetActive(false);
         }
     }

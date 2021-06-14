@@ -6,16 +6,17 @@ namespace _src.Scripts.Controller.Tools
     [RequireComponent(typeof(LineRenderer))]
     public class RulerTool : Tool
     {
+        [Header("References")]
         private LineRenderer _lineRenderer;
         private Camera _mainCamera;
 
-        protected override void Awake()
+        private void OnValidate()
         {
             _lineRenderer = GetComponent<LineRenderer>();
             _mainCamera = Camera.main;
         }
 
-        protected override void ActivateTool(bool value)
+        protected override void ActivateUI(bool value)
         {
             _variable.SetRaycastTarget(value);
         }
@@ -46,7 +47,7 @@ namespace _src.Scripts.Controller.Tools
             
             else if(Input.GetMouseButtonUp(0) && _isActive)
             {
-                ActivateTool(true);
+                ActivateUI(true);
             }
         }
 
@@ -55,7 +56,7 @@ namespace _src.Scripts.Controller.Tools
             _isActive = true;
             _lineRenderer.SetPosition(0, startPosition);
             _lineRenderer.SetPosition(1, startPosition);
-            ActivateTool(false);
+            ActivateUI(false);
         }
         private void OnDrag(Vector3 mousePosition)
         {

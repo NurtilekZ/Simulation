@@ -6,21 +6,24 @@ namespace _src.Scripts.Controller.Tools
 {
     public class StopWatchTool : Tool
     {
+        [Header("Fields")]
+        [SerializeField] private float timePeriod;
+        [Header("References")]
         [SerializeField] private Renderer _targetRenderer;
         [SerializeField] private Material _measuredObjectDefaultMaterial;
         [SerializeField] private Material _highlightMaterial;
         [SerializeField] private Camera _mainCamera;
         [SerializeField] private StopWatchPoint _startPoint;
         [SerializeField] private StopWatchPoint _endPoint;
-        [SerializeField] private float timePeriod;
 
         private IEnumerator _timerCoroutine;
 
-        protected override void Awake()
+        private void OnValidate()
         {
             _mainCamera = Camera.main;
             _timerCoroutine = StartTimer();
         }
+        
         private IEnumerator StartTimer()
         {
             while (true)
@@ -53,11 +56,11 @@ namespace _src.Scripts.Controller.Tools
             }
             else if(Input.GetMouseButtonUp(0) && _isActive)
             {
-                ActivateTool(true);
+                ActivateUI(true);
             }
         }
 
-        protected override void ActivateTool(bool value)
+        protected override void ActivateUI(bool value)
         {
             _startPoint.ActivatePoint(value);
             _endPoint.ActivatePoint(value);
@@ -73,7 +76,7 @@ namespace _src.Scripts.Controller.Tools
             }
             _startPoint.transform.position = mousePosition;
             _endPoint.transform.position = mousePosition;
-            ActivateTool(false);
+            ActivateUI(false);
         }
         private void OnDrag(Vector3 mousePosition)
         {

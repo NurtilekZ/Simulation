@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7990451396619590794}
   - component: {fileID: 7990451396619590795}
+  - component: {fileID: 1883497814614514241}
   m_Layer: 0
   m_Name: PoolingPosition
   m_TagString: Untagged
@@ -44,8 +45,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsLifetime: 20
-  _intervalSeconds: 2
+  _poolingInterval: 5
   _numberOfInstances: 10
-  _objectPrefab: {fileID: 784196134966212353, guid: 055726bc9922a0b47a316c1706953464, type: 3}
-  _isStopped: 0
+  _isDisabled: 0
   objectRotation: {x: -90, y: 0, z: 0}
+  _objectPrefab: {fileID: 784196134966212353, guid: 055726bc9922a0b47a316c1706953464, type: 3}
+  _movementHandler: {fileID: 1883497814614514241}
+  OnObjectEnabled:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1883497814614514241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7990451396619590796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd7644ad75f349f2b0898e6c6bd38656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 0
+  direction: {x: 0, y: 0, z: 0}

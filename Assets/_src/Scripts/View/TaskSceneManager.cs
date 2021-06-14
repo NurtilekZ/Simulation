@@ -1,15 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TaskSceneManager : MonoBehaviour
+namespace _src.Scripts.View
 {
-    public void ReloadScene()
+    public class TaskSceneManager : MonoBehaviour
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+        public void ReloadScene()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
 
-    public void LoadMenuScene()
-    {
-        SceneManager.LoadScene(0);
+        public void LoadMenuScene()
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

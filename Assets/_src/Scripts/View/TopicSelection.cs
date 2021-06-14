@@ -1,15 +1,24 @@
+using System;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
-public class TopicSelection : MonoBehaviour
+namespace _src.Scripts.View
 {
-    [SerializeField] private CinemachineVirtualCamera _camera;
-    [SerializeField] private List<Transform> _topicIslands;
-
-    public void OnSelectTopic(int topicNumber)
+    public class TopicSelection : MonoBehaviour
     {
-        _camera.m_LookAt = _topicIslands[topicNumber];
-        _camera.GetCinemachineComponent<CinemachineTrackedDolly>().m_PathPosition = topicNumber;
+        [SerializeField] private CinemachineVirtualCamera _camera;
+        [SerializeField] private List<Transform> _topicIslands;
+
+        private void Awake()
+        {
+            Application.targetFrameRate = 300;
+        }
+
+        public void OnSelectTopic(int topicNumber)
+        {
+            _camera.m_LookAt = _topicIslands[topicNumber];
+            _camera.GetCinemachineComponent<CinemachineTrackedDolly>().m_PathPosition = topicNumber;
+        }
     }
 }

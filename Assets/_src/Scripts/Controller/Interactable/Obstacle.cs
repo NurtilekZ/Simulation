@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _src.Scripts.Controller.Interactables
+namespace _src.Scripts.Controller.Interactable
 {
     public class Obstacle : MonoBehaviour
     {
